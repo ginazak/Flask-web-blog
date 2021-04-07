@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="background-whitesmoke">
+  <div id="profile" class="container">
+    <div id = "center">
+      <h1><strong>— All Posts —</strong></h1>
+      <h3><strong>.. encompassing architecture school and practise</strong></h3>
+      <hr style="text-align:center; border-top: solid 1px white; color: white; margin-left:3em;  margin-right: 3em">
+      <br>
+
+      <!-- sort posts by ascending or descending date -->
+      <h4>
+        <strong><span class="underline">
+        <a href="{{ url_for('about', sort_by='desc') }}"><i class="fa fa-sort-down" aria-hidden="true">Descending</i>
+        </a></span></strong> &nbsp&nbsp
+        <strong><span class="underline">
+        <a href="{{ url_for('about', sort_by='asc') }}"><i class="fa fa-sort-up" aria-hidden="true">Ascending</i></a>
+        </span></strong>
+      </h4>
+
+      <!-- each post and its content -->
+      {% for post in posts.items %}
+        <a href="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}"></a>
+        <h3><strong><span class="underline-pink"><a href="{{ url_for('post', post_id=post.id) }}">"{{ post.title }}"</a></span></h3>
+        <h5>by {{ post.user.username }} on {{ post.date}} </a></strong></span></h5><br>
+        <div id = "text_box">
+          <h4><strong>{{ post.Description }}</strong></h4>
+        </div>
+        <hr><br>
+      {% endfor %}
+
+        <!-- sidenav menu -->
+          <div class = "right-ad">
+            <div class="dotstyle dotstyle-fillup">
+              <ul>
+                <h4>
+                  <li><strong><a href = "{{url_for('about',sort_by=sort_by, page=1)}}">1</a></strong></li><br>
+                  <li><strong><a href = "{{url_for('about',sort_by=sort_by,page=2)}}">2</a></strong></li><br>
+                  <li><strong><a href = "{{url_for('about',sort_by=sort_by,page=3)}}">3</a></strong></li>
+                </h4>
+              </ul>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

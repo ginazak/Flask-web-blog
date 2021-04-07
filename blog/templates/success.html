@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="profile" class="container">
+    <div id="center">
+        <br>
+        <h2>Thank you for registering, <i>{{current_user.username}}!<br>
+        please proceed to <span class="underline"><a href="{{ url_for('login') }}">Log In</span>to access all services
+        </h2>
+    </div>
+</div>
+{% endblock content %}

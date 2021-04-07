@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="profile" class="container">
+    <div id="center">
+    <br>
+        <h1><b>— Namaskaram —</b></h1>
+        <h3>Say hello!</h3>
+        <hr>
+        <div class="Main">
+            <div class="contact">
+                <form method="POST" action="">
+                    {{ form.csrf_token }}
+                    {{ form.name (placeholder="Name")}}<br><br>
+                    {{ form.email (placeholder="Email")}} <br><br>
+                    {{form.message(placeholder="Message")}}<br><br>
+                    <input type="submit" value="Submit">
+                    <br>
+                </form>
+            </div>
+            <div>
+                <br>
+                <hr>
+                <h4><strong>Say hello @ maryzak.antony@gmail.com  </strong></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

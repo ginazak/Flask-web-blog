@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="profile" class="container">
+    <div id="center">
+    <br>
+    <h1><strong>— Log In —</strong></h1>
+    <h3>... to access your favourite posts</h3>
+    <hr>
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        {{ form.email(placeholder="Email") }}<br>
+        {% for error in form.email.errors %}
+        <h5><span style="color: red;">[{{ error }}]</span></h5>
+        {% endfor %}<br>
+        {{ form.password (placeholder="Password") }}<br>
+        {% for error in form.password.errors %}
+        <h5><span style="color: red;">[{{ error }}]</span></h5>
+        {% endfor %}<br>
+        <input type="submit" value="Login">        
+    </form>
+    </div>
+</div>
+{% endblock content %}

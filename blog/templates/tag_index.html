@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="profile" class="container">
+<br>
+<h2><strong>—  all your current tags —</strong></h2>
+<hr>
+<br>
+
+<ul>
+    {% for tag in tags %}
+    <h4><a href="{{ url_for('tag_detail', post_id = tag.id)}}"><button>{{ tag.name }}</button></a></h4>
+    {% endfor %}
+</ul>
+
+</div>
+
+{% endblock content %}
+

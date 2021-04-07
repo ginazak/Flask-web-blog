@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="profile" class="container">
+  <div id="center">
+  <br>
+  <h2><strong>{% block title %}— {{ tag.name }} tags —{% endblock %}</strong></h2>
+  <hr>
+  <br>
+
+  {% for post in posts %}
+    <h4><li><span class="underline-pink"><a href="{{ url_for('post', post_id = post.id)}}">{{ post.title }}</a></span></li></h4>
+  {% endfor %}
+  <br>
+  <hr>
+  <br>
+  </div>
+</div> 
+
+{% endblock content %}
+

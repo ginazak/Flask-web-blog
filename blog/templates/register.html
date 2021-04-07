@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="profile" class="container">
+    <div id = "center">
+    <br>
+    <h1><strong>— Register —</strong></h1>
+    <h3>... to get started</h3>
+
+    <form method="POST" action="">
+        <hr>
+        {{ form.csrf_token }}
+        {{ form.username (placeholder="Username")}}    {{ form.email (placeholder="Email")}}<br>
+            {% for error in form.username.errors %}
+            <h5><span style="color: red;">[{{ error }}]</span></h5>
+            {% endfor %}
+
+            {% for error in form.email.errors %} 
+            <h5><span style="color: red;">[{{ error }}]</span></h5>
+            {% endfor %}<br>
+
+        {{ form.password (placeholder="Password")}} {{ form.confirm_password (placeholder="Confirm password")}}<br>
+            {% for error in form.password.errors %}
+            <h5><span style="color:   red;">[{{ error }}]</span></h5>
+            {% endfor %}
+            
+        {% for error in form.confirm_password.errors %}
+            <h5><span style="color: red;">[{{ error }}]</span></h5>
+        {% endfor %}<br>
+        <input type="submit" value="Register">
+        </div>
+    </form>
+    </div>
+{% endblock content %}

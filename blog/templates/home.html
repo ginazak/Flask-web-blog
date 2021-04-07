@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- Landing page -->
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div id= "fixed-text">
+                <img src="{{ url_for('static', filename='img/mary zack Logo-2.png')}}"style="height:125px;"class="responsive">
+                <h1><bold>MARY ZACHARIAS</bold></h1>
+                <hr style="width:65%; text-align:center; margin-left:50">
+                <br>
+                <h3><a href="{{ url_for('about',sort_by='desc') }}">SOFTWARE DEVELOPER</a>   |   <a href="#Posts">ARCHITECTURAL DESIGNER</a></h3>
+
+                <ul class="icons">, 
+                    <li><a href="https://linkedin.com/in/mary-gina-zacharias " class="fa fa-linkedin"></a></li>
+                    <li><a href="https://www.instagram.com/ginazacharias/" class="fa fa-instagram"></a></li>
+                    <li><a href="https://github.com/ginazak" class="fa fa-github"></a></li>
+                    <li><a href="https://www.behance.net/gallery/113414565/Architectural-work" class="fa fa-behance"></a></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+
+    <!-- side-bar navigation -->
+    <div class = "right-ad">
+        <div class="dotstyle dotstyle-fillup">
+            <ul>
+                <h4>
+                <li><strong><a href="{{ url_for('home') }}">Home</a></strong></li><br>
+                <li><a href="#Profile">Profile</a></li><br>
+                <li><a href="#Education">Education</a></li><br>
+                <li><a href="#Work">Work</a></li><br>
+                <li><a href="#Posts">Posts</a></li>
+                </h4>
+            </ul>
+        </div>
+    </div> 
+
+
+
+    <!-- Profile/about me page -->
+    <div class="background-whitesmoke">                   
+        <div id="profile" class="container">
+        <div id = "center">
+          <h1><strong><a id="Profile">— Profile —</a></strong></h1>
+            <h3><strong>I'm an<span class="underline"> <a href="https://www.nex-architecture.com/people/gina-zacharias/">Architect</a> </span>by profession... <br>finding my way around the software industry</strong></h3>
+            <hr>
+            <div class="row">             
+                <br>
+                <h2><strong>About me</strong></h2>              
+                <h4><strong>I am an entry-level programmer, 
+                    eager to learn the ropes, and quick.<br>
+                    I like all things binary, and I get most enthusiastic about making things modular. 
+                    I've got a vested interest in design —in all forms, shapes and sizes.
+                    Apart from this I generally like <a href="{{ url_for('about', sort_by='asc') }}"><span class="underline">climbing rocks </span></a>and watching the sunset, <br>...and on most days I'm quite a happy person. </strong>
+                </h4>
+            </div> 
+            <br><hr><br>
+
+            <!-- stylised profile-picture-details -->
+            <div class="profile-avatar">
+            
+                <div class="avatar">
+                    <img src="{{ url_for('static', filename='img/DP.jpg')}}" alt="Mary Zacharias" >
+                </div>
+                <br>
+                <div class="details">  
+                    <h3><strong>Mary Gina Zacharias</strong></h3><hr>
+                    <h4><strong>
+                    Posts: <a href="{{ url_for('about', sort_by='asc') }}"><i class="fa fa-paper-plane"> </i></a>&nbsp 
+                    Contact: <a href="{{ url_for('contact') }}" class="fa fa-envelope"></a> <br><br>        
+                    SKILLS:<br>
+                    3D visualisation, Python, Javascript, Grasshopper<br>
+                    </strong>
+                    </h4>
+                </div>
+            <br>
+        </div>
+        <br><br><hr>
+    </div>
+    </div>
+</div>
+
+    <!-- 'Experiences' page -->
+    <div class="experience">
+        <div id="experience" class="container">
+            <div id="center">
+                <a id="Ex"><bold><h1>— Experiences —</h1></bold></a>
+                <p class="lead"><h3><strong>Got <i>many</i> more miles to go, ho ho</strong></h3></p>
+                <hr>
+                <br>
+            </div>
+
+            <h2 style="text-align: right;"><a id="Education">Education</a></h2>
+
+            <!-- Grid-style for education details -->
+            <div id = "education-grid">
+                <div id="first">
+                    <h3><b><span class="underline-white"><span style="font-weight:100px;"><a href="https://www.cardiff.ac.uk/about">Cardiff University</a> </span> </span></b></h3>
+                    <h4><strong>
+                    Masters in Computing<br>
+                    United Kingdom, 2020-2022</strong>
+                    </h4><br>
+                </div>
+
+                <div id="second">
+                    <h5>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim dapibus pellentesque. Quisque elementum massa ut leo gravida, non cursus quam dignissim.
+                        <br> Aliquam lacinia congue metus, ut tristique nisl varius eget. Integer metus erat, venenatis in tellus a, suscipit faucibus massa. Proin sit amet dolor nisi.
+                         Sed porttitor justo vitae. 
+                        <br>                   
+                    </h5><br>
+                </div>
+
+                <div id="third">                    
+                    <h3><b><span class="underline-white"> <a href="https://www.rvce.edu.in/">RV College Of Engineering</a> </span></b></h3>
+                    <h4><strong>
+                    Bachelors in Architecture<br>
+                    India, 2013-2018</strong>
+                    </h4><br>
+                </div>
+
+                <div id="fourth">
+                    <h5>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim dapibus pellentesque. Quisque elementum massa ut leo gravida, non cursus quam dignissim.
+                        <br> Aliquam lacinia congue metus, ut tristique nisl varius eget. Integer metus erat, venenatis in tellus a, suscipit faucibus massa. Proin sit amet dolor nisi.                        
+                        <br>
+                    </h5>
+                </div>
+
+                <div id="fifth">                  
+                    <h3><b><span class="underline-white"> <a href="https://www.jirs.ac.in/">JIRS</a> </span></b></h3>
+                    <h4><strong>
+                    Senior Secondary, Science<br>
+                    India, 2011-2013</strong>
+                    </h4><br>
+                </div>
+
+                <div id="sixth">
+                    <h5>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim dapibus pellentesque. Quisque elementum massa ut leo gravida, non cursus quam dignissim.
+                        <br> Aliquam lacinia congue metus, ut tristique nisl varius eget. Integer metus erat, venenatis in tellus a, suscipit faucibus massa. Proin sit amet dolor nisi.                        
+                        <br>
+                    </h5>
+                </div>
+            </div>
+
+            
+           <!--  Work experience -->
+            <hr><br>
+            <h2><a id="Work">Work Experience</a></h2>
+            <br>
+            <h3><b><span class="underline-white"> <a href="https://www.nex-architecture.com">Nex—</a> </span></b></h3>
+            <h4><strong>
+            Architectural Designer, 2019-2021<br>
+            London, United Kingdom
+            </strong>
+            </h4> <br>
+            <h3><b><span class="underline-white"> <a href="https://www.ge3s.org/">GE3s</a> </span></b></h3>
+            <h4><b>
+            Sustainability Engineer - Intern, 2019<br>
+            Dubai, United Arab Emirates
+            </b>
+            </h4><br>
+            <h3><b><span class="underline-white"> <a href="https://www.kumarandswamyarchitects.com/">Kumar & Swamy Architects</a> </span></b></h3>
+            <h4><b>
+            Architect- Intern, 2017-2018<br>
+            Bangalore, India
+            </b>
+            </h4><br>
+            <h3><b><span class="underline-white"> <a href="http://www.atelierglobal.com/">Atelier D'Arts & Architecture</a> </span></b></h3>
+            <h4><b>
+            Architect- Intern, 2016<br>
+            Bangalore, India
+            </b>
+            </h4><br><hr><br>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- Selected Posts and details container -->
+        <div class="background-whitesmoke">
+            <br>
+            <div class="container-post">
+                <div id="center">
+                    <h1><strong><a id="Posts">— Posts —</a></strong></h1>
+                    <p class="lead"><h3><strong>... Here's some of my architectural work</strong></h3></p>
+                    <hr>
+                    <br>
+                </div>
+                {% for post in posts %}
+                    <div class="grid-container">
+                        <div class= "imgs">
+                            <a href="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}"></a>
+                        </div>
+                        <div id = "main_author">                          
+                            <h3><strong><span class="underline"><a href="{{ url_for('post', post_id=post.id) }}">"{{ post.title }}"</a></span></strong></h3>
+                            <h5><strong>by {{ post.user.username }}</strong></h5></strong>
+                            <h4><br><strong>{{ post.Description }}</strong></h4>
+                            <hr> 
+                            
+                            <h4><strong>{{ post.user_likes.count() }} likes</strong>&nbsp
+                            {% if current_user.is_authenticated %}
+                                {% if current_user.has_liked_post(post) %}
+                                    <a href="{{ url_for('like_action2', post_id=post.id, action='unlike') }}"><i class="fa fa-thumbs-up" style= "color: #ff7496">Unlike</i></a>
+                                {% else %}
+                                    <a href="{{ url_for('like_action2', post_id=post.id, action='like')}}"><i class="fa fa-thumbs-up" style= "color:rgb(95, 89, 89)">Like</i></a>
+                                {% endif %}
+                            {% endif %}&nbsp
+                            </h4>
+                        </div>
+                    </div> 
+                    <br> <hr><br>              
+                {% endfor %}
+                    <h4>
+                        <strong><span class="underline" style="text-align: right"><a href="{{ url_for('about', sort_by='asc') }}">View All Posts >></a></span></strong><br>
+                    </h4>
+            </div><br>
+            </div>
+        </div>
+
+
+        <!-- Contact details -->
+        <div class="Footer">
+            <div id="Footer" class="container">
+            <div id="center">
+                <h2><strong><span class="underline-white"><a href="{{ url_for('contact') }}">— Contact — </a></span></strong></h2>
+                <p class="lead"><h3><strong>It'd be great to hear from you</strong></h3></p>
+                <hr>
+                <br>
+            </div>
+        </div>
+        </div>
+
+
+        
+    </body>
+    <!-- Scripts -->
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+            }
+        </script>
+
+
+
+{% endblock content %}
+
+
+
+    
+
+    
+    
+    

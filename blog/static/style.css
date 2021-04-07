@@ -1,0 +1,932 @@
+
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+
+
+
+/* Icon (alt) */
+
+	html, body, div, span,
+	h1, h2, h3, h4, h5, h6, p,
+	pre, a, code,  em, img, q, s
+	small,strong, sub, sup,b,
+	u, i, center, ol, ul, li,
+	form, label, table, aside,footer, 
+	header, menu, nav, output, ruby,
+	section, summary, time, mark, audio, video {
+		margin: auto;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: center;
+	}
+
+
+
+.grid-container {
+	display: grid;
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+	}
+
+
+html {
+	height: 100%;
+}
+
+/* Code to create gradient background
+referenced from HTML5up-Identity post by @ajlkn 21-1-2014
+accessed 11-2-2021
+from https://html5up.net/uploads/demos/identity/ */
+body {
+	height: 100%;
+	background-color: #ffffff;
+	background-image: url("img/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("img/bg.jpg"); 
+	background-repeat: repeat,			no-repeat,			no-repeat;
+	background-size: 100px 100px, cover,				cover;
+	background-position: top left,		center center,		bottom center;
+	background-attachment: fixed,			fixed,				fixed;
+}
+/* end of referenced code */
+
+pre{
+	white-space: pre-line;
+}
+
+header {
+	overflow: hidden;
+	position: absolute; 
+	top: 0; 
+	width: 100%;
+	cursor: crosshair;
+	z-index:1000;
+	}
+
+header:hover {
+	-moz-transition: opacity 0.8s ease-in-out;
+	-webkit-transition: opacity 0.8s ease-in-out;
+	-ms-transition: opacity 0.8s ease-in-out;
+	transition: opacity 0.8s ease-in-out;
+	cursor: crosshair;
+	} 
+
+	#links:hover{
+	cursor: crosshair;	
+	}
+
+#links{
+	-moz-transition: opacity 0.8s ease-in-out;
+	-webkit-transition: opacity 0.8s ease-in-out;
+	-ms-transition: opacity 0.8s ease-in-out;
+	transition: opacity 0.8s ease-in-out;
+	opacity: 1;
+	color: rgba(255, 255, 255, 0.5);
+	color: #f0f2f3;
+	letter-spacing: 0.1em;
+	word-spacing: 0.2em;
+	display: flex;
+	flex direction: row;
+	align-items: right;
+	padding-left: 2.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	cursor: crosshair; 
+	height: 13 em;
+}
+
+
+/* Type */
+body, input, select, textarea {
+	color: #414f57;
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	line-height: 2;
+	letter-spacing: 0.13em;
+	margin-top: 1em;
+}
+
+@media screen and (max-width: 480px) {
+
+	header, body, input, select, textarea, strong, pre, li {
+		font-size: 9pt;
+		line-height: 1.25;
+	}
+}
+
+a:hover {
+		color: #ff7496;
+		transition: background 0.3s;
+		
+	}
+
+strong, b {
+	color: #313f47;
+	letter-spacing: 0.07em ;
+	word-spacing: 0.15em;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	color: #f0f2f3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #f0f2f3;
+	line-height: 1.2;
+	margin: 0 0 0.75em 0;
+	position: relative
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2.4em;
+	letter-spacing: 0.22em;
+	margin: 0 0 0.525em 0;
+}
+
+h2 {
+	font-size: 1.9em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h4 {
+font-size: 1em;
+}
+
+h5 {
+	font-size: 0.8em;
+}
+
+h6 {
+	font-size: 0.5em;
+}
+
+@media screen and (max-width: 480px) {
+
+h1 {
+	font-size: 1.6em;
+	}
+
+h2{
+	font-size: 1.3em;
+	}
+
+
+h3{
+	font-size: 1.0em;
+	}
+
+h4{
+	font-size: 0.7em;
+	}
+
+h5{
+	font-size: 0.6em;
+}
+
+}
+sub {
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
+}
+
+sup {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
+}
+
+hr {
+	border: 0;
+	border-bottom: solid 1px #c8cccf;
+	margin: auto;
+}
+
+
+/* Icons */
+
+	ul.icons {
+		cursor: crosshair;
+		list-style: none;
+		margin-top: -0.675em;
+		margin: auto;
+	}
+
+	ul.icons li {
+		display: inline-block;
+		padding: 0.975em 0.9em;
+	}
+
+	ul.icons li a {
+		text-decoration: none;
+		position: relative;
+		display: block;
+		width: 2.7em;
+		height: 2.7em;
+		border-radius: 50%;
+		border: solid 1px #c8cccf;
+		line-height: 2.5em;
+		overflow: hidden;
+		text-align: center;
+		text-indent: 2.5em;
+		white-space: nowrap;
+	}
+
+	ul.icons li a:before {
+		color: #ffffff;
+		text-shadow: 1.25px 0px 0px #787879, -1.25px 0px 0px #989899, 0px 1.25px 0px #989899, 0px -1.25px 0px #989899;
+	}
+
+	ul.icons li a:hover:before {
+		text-shadow: 1.25px 0px 0px #ff7496, -1.25px 0px 0px #ff7496, 0px 1.25px 0px #ff7496, 0px -1.25px 0px #ff7496;
+	}
+
+	ul.icons li a:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: inherit;
+		height: inherit;
+		font-size: 1.2em;
+		line-height: inherit;
+		text-align: center;
+		text-indent: 0;
+	}
+
+	ul.icons li a:hover {
+		border-color: #ff7496;
+		cursor: crosshair;
+	}
+
+
+	@media screen and (max-width: 480px){
+		ul.icons li a{
+			width: 1.90em;
+			height: 1.9em;
+			line-height: 1.6em;
+		}
+
+		ul.icons li {
+			display: inline-block;
+			padding: 0.375em 0.3em;
+		}
+	}
+
+
+	@media screen and (max-width: 480px) {
+		ul.icons li a:before {
+			font-size: 0.8rem;
+		}
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	input[type="text"],
+	input[type="password"],
+	input[type="select"],
+	input[type="search"],
+	button,
+	.button {
+
+		height: 2.5em;
+		line-height: 1.75em;
+		padding: 0 0.9em;
+		border-radius: 6px;
+		border: solid 2px #ffffff;
+		cursor: crosshair;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	@media screen and (max-width: 400px){
+	.button {
+		height:1.0em ;
+		width: 1.0em;
+		line-height: 0.7em;
+		padding: 0;
+		}
+	}
+
+/* ------------------------------------------------------------------------------ */
+
+/* HOME PAGE */
+
+#fixed-text{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	}
+
+	@media screen and (max-width: 880px) {
+
+		#fixed-text{
+		font-size: 70%;
+		}
+		#links{
+			font-size:70%;
+		}
+		#text_box{
+		font-size:80%;
+		}
+	}
+
+	@media screen and (max-width: 360px) {
+		#main{
+		font-size: 100%;
+		}
+		#links{
+			font-size:100%;
+		}
+		#profile{
+			font-size:100%;
+		}
+		#text_box{
+		font-size:100%;
+		}
+	}
+
+#main {
+	box-sizing: border-box;
+	margin-top: 30px;
+	display: flex;
+	border-radius: 5%;
+	cursor: crosshair;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	width: 100vw;
+	height: 90vh;
+	text-align: center;
+	}
+
+	@media screen and (max-width: 700px) {
+		#main {
+		padding-left: 5em;
+		padding-right: 5em;
+		margin-right:30px ;
+		min-height: 100%;
+		text-size-adjust: 70%;
+		}
+	}
+
+/* Wrapper */
+
+#wrapper {
+	display: table;
+	position: relative;
+	min-height: 100%;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	}
+
+#wrapper:before {
+	content: '';
+	display: block;
+}
+
+@media screen and (max-width: 360px) {
+	#wrapper {
+	padding: 2em;
+	padding-right: 5em;
+	margin-right:30px ;
+	max-height: 100%;
+	height:100vh;
+	}
+}
+
+body.is-ie #wrapper {
+	height: 100%;
+} 
+
+#text_box{
+text-align: left;
+max-width:85%;
+min-width: 70%;
+padding-top:0;
+
+}
+    
+
+/* PROFILE */
+#profile {
+	background color: white;
+	box-sizing: border-box;
+	position: center;
+	text-align: left;
+	min-height: 100vh;
+	margin-top: 30px;
+	padding-top: 2.5em;
+	text-decoration-color: whitesmoke;
+}
+
+#innerheader.hover{
+	box-sizing: border-box;
+	margin-top: 30px;
+	text-decoration: whitesmoke;	
+}
+
+  .underline {
+	text-decoration: none;
+	border-bottom:rgb(160, 142, 142,0.6) 0.115em dotted;
+  }
+
+  .underline-white {
+	text-decoration: none;
+	border-bottom:rgb(255, 255, 255, 0.4) 0.115em dotted;
+  }
+
+  .underline-pink {
+	text-decoration: none;
+	border-bottom:rgba(245, 18, 18, 0.4) 0.115em dotted;	
+  }
+ 
+
+  .background-whitesmoke{
+	  background-color: whitesmoke;
+	  margin-top: 100px;
+	  margin-bottom: 0px;
+  }
+
+  @media screen and (max-width: 700px){
+	.background-whitesmoke{
+		margin-top:30px;
+	} 
+  }
+
+  .background-white{
+	background-color: white;
+}
+
+
+  .background-grey{
+	background-color: rgb(148, 144, 144);
+	border-top: white;
+	min-height: 100%;
+}
+
+/* ------------------------------------------------------------ */
+  /* @media (max-width: 767px) */
+.container {
+    padding: 60px 60px;
+    min-width: 280px;
+	max-width: 70%
+}
+
+.container-post {
+	img{
+		height: 10px;
+		width: 10px;
+	}
+    padding: 60px 60px;
+    min-width: 280px;
+	max-width: 65%
+	}
+
+.profile-avatar {	
+	display: flex;
+}
+	
+
+.profile-avatar{
+	border: grey;
+	border-radius: 20px;
+	background-color: rgb(255, 255, 255, 0.4);
+}
+
+  .avatar {
+    display: flex;
+	position: relative;
+	}
+
+	li.pointer {
+        cursor: crosshair;
+      }
+	a.pointer{
+		cursor: crosshair;
+	}
+	.link:hover {
+        cursor: crosshair;
+      }
+
+	@media screen and (max-width: 570px) {
+		.avatar img{
+			align-self: center;
+			width: auto;
+			max-width: 70px;
+			height: auto;
+			max-height: 70px;
+			padding: 1.2em;
+			border-radius: 50%;
+		}
+		.profile-avatar{
+			margin:0;
+			align-content: left;
+			text-align: left;
+			margin: 0;
+		}
+	}
+
+	.details{
+		text-justify: left;
+		text-align: left;
+		padding-right: 2em;
+		padding-left: 0px;
+	}
+
+
+
+@media screen and ( max-width: 900px ) {
+	.avatar img {
+		width: auto;
+		max-width: 190px;
+		height: auto;
+		max-height: 190px;
+		padding: 2em;
+		border-radius: 50%;
+		}
+	}
+	@media screen and ( min-width: 900px) {
+		.avatar img{ 
+		width: auto;
+		max-width: 220px;
+		height: auto;
+		max-height: 220px;
+		padding: 2em;
+		border-radius: 50%;
+		}
+	}
+
+
+/* For Education section - Home page */
+  #education-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-row-gap: 10px;
+	grid-column-gap:100px;
+	grid-auto-rows: minmax(0px, auto);
+	}
+
+	@media screen and (max-width: 480px) {
+		#education-grid{
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			grid-row-gap: 0px;
+			grid-column-gap:0px;
+			grid-auto-rows: minmax(0px, auto);
+			justify-content: center;
+			text-align: center;
+			margin: 0;
+		}
+	}
+
+	@media screen and (min-width: 481px) {
+		#education-grid{
+			grid-row-gap: 20px;
+			grid-column-gap:30px;
+			grid-auto-rows: minmax(0px, auto);
+			justify-content: center;
+			text-align: center;
+			margin: 0;
+		}
+	}
+
+	#first{ 
+		display:grid;
+		align-content: top;
+		text-align: right ;
+		margin-top: 0;
+		margin-right: 0;
+	}
+	#second{ 
+		display:grid;
+		align-content: top;
+		text-align: left ;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	#third{ 
+		display:grid;
+		align-content: top;
+		text-align: right ;
+		margin-top: 0;
+		margin-right: 0;
+	}
+
+	#fourth{ 
+		display:grid;
+		align-content: top;
+		text-align: left ;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	#fifth{ 
+		display:grid;
+		align-content: top;
+		text-align: right;
+		margin-top: 0;
+		margin-right: 0;
+	}
+
+	#sixth{ 
+		display:grid;
+		align-content: top;
+		text-align: left ;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	@media screen and (max-width: 480px) {
+		#second{
+			display:none;
+		}
+		#fourth{
+			display:none;
+		}
+		#sixth{
+			display:none;
+		}
+
+	}
+
+/* grid for selected posts on home page */
+
+
+	.grid-container {
+		max-width: 1600px;
+		margin: 0 auto;
+		display: grid;
+		grid-gap: 1rem;
+		/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+	}
+
+	@media (min-width: 800px) {
+		.grid-container { grid-template-columns: repeat(2, 1fr); }
+		}
+
+ /* ------------------------------------------------------------ */
+
+/* helper codes */
+  #center{ 
+	box-sizing: border-box;
+	position: center;
+	text-align: center;
+  }
+
+  @media (max-width: 767px){
+  .container {
+    padding: 60px 20px;
+    min-width: 280px;
+}}
+
+
+/* ------------------------------------------------------------------------------ */
+
+/*FOOTER */
+
+/* Icons copy of icons on top but with slightly different properties (ex. shadow fade)*/
+
+ul.iconss {
+	cursor: crosshair;
+	list-style: none;
+}
+
+ul.iconss li {
+	display: inline-block;
+	padding: 1em 0.13em;
+}
+
+ul.iconss li a {
+	text-decoration: none;
+	position: relative;
+	display: block;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	line-height: 1em;
+	overflow: hidden;
+	text-align: center;
+	text-indent: 1.3em;
+	white-space: nowrap;
+}
+
+ul.iconss li a:before {
+	color: #ffffff;
+	text-shadow: 1.25px 0px 0px #787879, -1.25px 0px 0px #989899, 0px 1.25px 0px #989899, 0px -1.25px 0px #989899;
+}
+
+ul.iconss li a:hover:before {
+	text-shadow: 1.25px 0px 0px #ff7496, -1.25px 0px 0px #ff7496, 0px 1.25px 0px #ff7496, 0px -1.25px 0px #ff7496;
+}
+
+ul.iconss li a:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	font-size: 1rem;
+	line-height: inherit;
+	text-align: center;
+	text-indent: 0;
+}
+
+ul.iconss li a:hover {
+	border-color: #ff7496;
+}
+
+@media screen and (max-width: 480px) {
+	ul.iconss li a:before {
+		font-size: 1rem;
+	}
+}
+
+/* Code to create transition effect on footer icons
+referenced from HTML5up-Identity post by @ajlkn 21-1-2014
+accessed 11-2-2021
+from https://html5up.net/uploads/demos/identity/ */
+#footer {
+-moz-transition: opacity 0.5s ease-in-out;
+-webkit-transition: opacity 0.5s ease-in-out;
+-ms-transition: opacity 0.5s ease-in-out;
+transition: opacity 0.5s ease-in-out;
+/* end of referenced code */
+bottom: 0.3em;
+padding-bottom: 0.3em;
+color: rgba(255, 255, 255, 0.5);
+left: 2em;
+opacity: 0.5;
+position: fixed }
+
+#footer .iconss {
+margin: 0 0 0.2em 0; 
+}
+
+#footer:hover {
+opacity: 1; 
+}
+
+
+/* ------------------------------------------------------------------------------ */
+
+/* Image borders*/
+* {
+	box-sizing: border-box;
+  }
+.slides {
+  display: flex;
+  height: 10px;
+} */
+
+.slider {
+	width: 1400px;
+	border-radius: 50px;
+	text-align: bottom;
+	overflow: hidden;
+	background: grey;	
+  }
+
+  img { 
+	display: flex;
+	max-width: 95%;
+	/* max-height:95%; */
+	border-radius: 50px;
+	border-color:grey
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	padding: 15px;
+	opacity: 1;
+  }
+
+  /* ------------------------------------------------------------------------------ */
+
+
+
+  /* DOTSTYLE NAVIGATION */
+  .dotstyle ul {
+	position: fixed;
+	display: block;
+	margin: 0;
+	padding-top: 9em;
+	list-style: square;
+	list-style-position: outside;
+	cursor: default;
+	orientation: landscape ;	
+}
+
+@media screen and (max-width: 480px){
+	.dotstyle ul{
+		padding-top: 9em;
+		padding-left:1em;
+	}
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 0 20px 0;
+	width: 15px;
+	height: 15px;
+	cursor: crosshair;
+	padding: 15px;
+}
+
+@media screen and (max-width: 480px){
+	.dotstyle li{
+		width: 5px;
+		height: 5px;
+		padding: 7px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+@media screen and (max-width: 780px){
+	.dotstyle li{
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: rgb(255, 255, 255);
+	background-color: rgba(255,255,255,0.3);
+	text-indent: -5.4em;
+	color:grey;
+	size: 5px;
+	cursor: crosshair; 
+	position: absolute;
+	
+}
+/* Code to perform dotstyle navigation
+adapted from CoDrops post by Mary Lou 21-1-2014
+accessed 4-2-2021
+https://tympanus.net/codrops/2014/01/21/dot-navigation-styles.
+in specific, transition property referenced, other fields and values have been changed */
+.dotstyle-fillup li a {
+	background-color: #f5f5f5;
+	box-shadow: inset 0 0 0 1px rgb(119, 118, 118);
+	transition: background 0.3s;
+}
+
+.dotstyle-fillup li a:hover,
+.dotstyle-fillup li a:focus {
+	background-color: rgba(0,0,0,0.2);
+	color: #ff7496;
+}
+
+.dotstyle-fillup li.current a::after {
+	height: 100%;
+}
+/* end of referenced code */
+
+
+.right-ad{
+	position: absolute;
+	right: 2.5em;
+	top: 90px;
+}
+
+@media screen and (max-width: 600px){
+.right-ad{
+	position: absolute;
+	right: 3em;
+	top: 100px;
+	height: 4px;
+	width: 4px;
+	}
+}
+
+/* ------------------------------------------------------------------------------ */
+
+

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="background-whitesmoke">
+    <div class ="container-post">
+        <div id ="center">
+            <br>           
+            <h2><strong>"{{ post.title }}" —</strong></h2>
+            <hr>
+            <img src="{{ url_for('static', filename='img/' + post.image_file) }}"><br>
+        </div>
+        <hr>
+
+        <!-- content and like button -->
+        <div id = "text_box">
+            <h4><strong><b>By {{ post.user.username }},</b></h4><br> </h5>Dated {{ post.date }}</strong></h5>
+            <hr><br>       
+            <h4><strong><pre>{{ post.content }}</pre></strong></h4><br>
+            <hr>       
+            {% if current_user.is_authenticated %}
+                {% if current_user.has_liked_post(post) %}
+                    <a href="{{ url_for('like_action2', post_id=post.id, action='unlike') }}"><i class="fa fa-thumbs-up" style= "color: #ff7496">Unlike</i></a>
+                {% else %}
+                    <a href="{{ url_for('like_action2', post_id=post.id, action='like')}}"><i class="fa fa-thumbs-up" style= "color:rgb(95, 89, 89)">Like</i></a>
+                {% endif %}     
+            {% endif %}&nbsp
+            {{ post.user_likes.count() }} likes
+            <hr>
+        </div>
+
+        <!-- comment form -->
+        <form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
+            <br>
+            <div id ="center">
+            <h3><strong>— Leave a comment below —</strong></h3>
+            {% if current_user.is_authenticated %}
+                {{ form.hidden_tag() }}
+                <div class="">
+                {{ form.comment (placeholder="Your Comment") }}
+                {% for error in form.comment.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="">
+                </div>
+            {% else %}
+                <h5><strong><span class="underline"><a href="{{ url_for('login') }}">log in to continue</a></span></strong></h5>
+            {% endif %}
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
+<br>
+
+<!-- display other's comments -->
+<div class= "container-post">
+    <div id= "center">
+        <h3><bold>— Comments from the public —</bold></h3>
+        <hr>
+    </div>
+    <br>
+    <div id="text_box">
+        {% for comment in comments %}
+            <h4 style = "color:#242323"><li> "{{ comment.content }}"</li></h4>
+            <strong><h5>Posted by {{ comment.user.username }}
+            <h5></strong><br>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+ 
+    
+    <!-- display present user's tags -->
+    <div id="center">
+        <h4>Current Tags: &nbsp</h4>
+        {% if current_user.is_authenticated %}
+            {% for tag in post.tags %}
+                <a href="{{ url_for('tag_detail', post_id = tag.id)}}"><button>{{ tag.name }}</button></a>&nbsp
+            {% endfor %}
+            <br><br>
+            <h4><a href="{{ url_for('tag_index') }}">View all your tags>></a></h4>
+        {% else %}
+            <br>
+            <h5><span class="underline-white"><a href="{{ url_for('login') }}">No tags to show</a></h5></span>
+        {% endif %}
+        <br>
+        <hr>
+        <br>
+
+
+    <!-- Redundant code: Tag button doesn't work -->
+
+    <!--<form method="POST" action="{{ url_for('tag_post2')}}">
+            {% if current_user.is_authenticated %}
+                <input type="text" name="content" value="somecontent"></input><br>
+                <input type="submit" value="Submit"></input>
+                 {% else %}
+                <h5><strong><span class="underline"><a href="{{ url_for('login') }}">log in to tag this post!</a></span></strong></h5>
+            {% endif %}
+        </form>
+        <br>
+        <hr/> -->
+    
+    </div>  
+
+</div>
+
+
+{% endblock content %}
+
+

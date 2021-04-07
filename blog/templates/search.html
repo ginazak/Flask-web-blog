@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div id="profile" class="container">
+  <div id="center">
+    <br>
+      <h1><strong>— Search —</strong></h1>
+      <h3>Search for a post title or content</h3>
+      <hr style="solid 0.6px">
+
+    <form action= "{{ url_for('search_index') }}" method="get" role="form">
+      <input name="q" placeholder="Search..." value="{{ request.args.get('q', '') }}" />
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Go</button>
+      </span>
+    </form>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2><strong>— suggestive titles —</strong></h2>
+    
+    {% for post in object_list.items %}
+    <h4><li><span class="underline-pink"><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></span></li></h4>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock content %}
